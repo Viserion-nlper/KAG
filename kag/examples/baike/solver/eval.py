@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 from kag.common.benchmarks.evaluate import Evaluate
 from kag.solver.logic.solver_pipeline import SolverPipeline
-from kag.common.conf import KAG_CONFIG
+from kag.common.conf import KAG_CONFIG, init_env
 from kag.common.registry import import_modules_from_path
 
 from kag.common.checkpointer import CheckpointerManager
@@ -24,13 +24,16 @@ def qa(query):
 
 
 if __name__ == "__main__":
+    init_env("/Users/czq/code/KAG/KAG/kag/examples/baike/kag_config.yaml")
+    import_modules_from_path("/Users/czq/code/KAG/KAG/kag/examples/baike/solver")
     import_modules_from_path("./prompt")
     queries = [
-        "周星驰的姓名有何含义？",
-        "周星驰和万梓良有什么关系",
-        "周星驰在首部自编自导自演的电影中，票房达到多少，他在其中扮演什么角色",
-        "周杰伦曾经为哪些自己出演的电影创作主题曲？",
-        "周杰伦在春晚上演唱过什么歌曲？是在哪一年",
+        # "周星驰的姓名有何含义？",
+        # "周星驰和万梓良有什么关系",
+        # "周星驰在首部自编自导自演的电影中，票房达到多少，他在其中扮演什么角色",
+        # "周杰伦曾经为哪些自己出演的电影创作主题曲？",
+        # "周杰伦在春晚上演唱过什么歌曲？是在哪一年",
+        "减压器的安装要求是啥"
     ]
     for q in queries:
         qa(q)

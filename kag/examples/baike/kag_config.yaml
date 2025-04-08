@@ -1,18 +1,18 @@
 #------------project configuration start----------------#
 openie_llm: &openie_llm
-  api_key: key
+  api_key: sk-2ba1960eb13f42fe9da1cb158041fa2e
   base_url: https://api.deepseek.com
   model: deepseek-chat
   type: maas
 
 chat_llm: &chat_llm
-  api_key: key
+  api_key: sk-2ba1960eb13f42fe9da1cb158041fa2e
   base_url: https://api.deepseek.com
   model: deepseek-chat
   type: maas
 
 vectorize_model: &vectorize_model
-  api_key: key
+  api_key: sk-lsxqelzyejatisqbtevcxkgsnrnfibucukoyiengbvardqil
   base_url: https://api.siliconflow.cn/v1/
   model: BAAI/bge-m3
   type: openai
@@ -25,7 +25,7 @@ log:
 project:
   biz_scene: default
   host_addr: http://127.0.0.1:8887
-  id: '7'
+  id: '18'
   language: zh
   namespace: BaiKe
 #------------project configuration end----------------#
@@ -58,8 +58,8 @@ kag_builder_pipeline:
       vectorize_model: *vectorize_model
     writer:
       type: kg_writer # kag.builder.component.writer.kg_writer.KGWriter
-  num_threads_per_chain: 2
-  num_chains: 4
+  num_threads_per_chain: 1
+  num_chains: 10
   scanner:
     type: dir_file_scanner # kag.builder.component.scanner.directory_scanner.DirectoryScanner
 #------------kag-builder configuration end----------------#
